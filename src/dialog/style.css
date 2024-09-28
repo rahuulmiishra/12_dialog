@@ -1,0 +1,66 @@
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(232, 27, 27, 0.7);
+  z-index: -1;
+  animation: showDialog 0.3s linear forwards;
+}
+
+.dialog-content {
+  background-color: #fff;
+  color: #333;
+  padding: 40px;
+  border-radius: 6px;
+  max-width: 80vw;
+  max-height: 60vw;
+  overflow: auto;
+  position: relative;
+  animation: showDialog 0.3s linear forwards;
+}
+
+.dialog-close {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: transparent;
+  border: 0;
+  color: #333;
+}
+
+.hide-dialog {
+  animation: hideDialog 0.3s linear forwards !important;
+}
+
+@keyframes showDialog {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hideDialog {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
